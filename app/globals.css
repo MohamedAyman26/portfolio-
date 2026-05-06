@@ -1,50 +1,121 @@
 @import "tailwindcss";
+
+/* =========================
+   ROOT
+========================= */
+
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #050816;
+    --foreground: #ffffff;
+    --card: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.08);
+    --text-secondary: #94a3b8;
+    --cyan: #22d3ee;
+    --blue: #3b82f6;
 }
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+/* =========================
+   BASE
+========================= */
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     background: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+    background: rgba(34, 211, 238, 0.3);
+    color: white;
+}
+
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
 .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   UTILITIES
+========================= */
+
+.text-gradient {
+    background: linear-gradient( to right, var(--cyan), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.border-gradient {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-a {
-    position: relative;
+.section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
-a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 1px;
-    background: white;
-    transition: 0.3s;
-}
 
-a:hover::after {
-    width: 100%;
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 768px) {
+    .section-spacing {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    body {
+        font-size: 15px;
+    }
 }

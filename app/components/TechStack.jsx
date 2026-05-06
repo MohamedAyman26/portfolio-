@@ -1,125 +1,216 @@
+const stacks = [
+  {
+    title: "Frontend Engineering",
+    description:
+      "Building scalable and responsive interfaces with clean architecture and modern UI systems.",
+    tech: ["React", "Next.js", "Redux", "Tailwind"],
+    color: "from-cyan-400 to-blue-500",
+    border: "hover:border-cyan-400/40",
+    icon: "</>",
+  },
+  {
+    title: "Backend Systems",
+    description:
+      "Designing scalable APIs and backend architectures optimized for performance and reliability.",
+    tech: ["Django", "Node.js", "REST API"],
+    color: "from-emerald-400 to-green-500",
+    border: "hover:border-emerald-400/40",
+    icon: "{ }",
+  },
+  {
+    title: "CMS & Web Solutions",
+    description:
+      "Developing fast and SEO-focused business websites with modern web solutions.",
+    tech: ["WordPress", "SEO"],
+    color: "from-violet-400 to-purple-500",
+    border: "hover:border-violet-400/40",
+    icon: "⚡",
+  },
+];
+
 export default function TechStack() {
   return (
-    <section id="tech" className="py-32 px-6 max-w-6xl mx-auto">
+    <section
+      id="tech"
+      className="
+      relative
+      py-24 md:py-32
+      px-6
+      bg-[#050816]
+      overflow-hidden
+    "
+    >
 
-      {/* Header */}
-      <div className="mb-20">
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Tech Stack
-        </h2>
-        <p className="text-gray-400 mt-4 max-w-lg">
-          Technologies I use to build scalable systems and modern web applications.
-        </p>
-      </div>
+      {/* Background Glow */}
+      <div
+        className="
+        absolute inset-0
+        bg-gradient-to-br
+        from-cyan-500/5
+        via-transparent
+        to-blue-500/5
+        pointer-events-none
+      "
+      />
 
-      {/* Grid */}
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto relative z-10">
 
-        {/* Frontend */}
-        <div className="group relative p-6 rounded-2xl bg-[#0f172a] border border-white/10 
-                        hover:border-blue-500/40 transition duration-300 hover:-translate-y-2">
+        {/* Header */}
+        <div className="mb-16 md:mb-20">
 
-          {/* Glow */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 
-                          bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl transition" />
+          <span
+            className="
+            inline-flex
+            px-4 py-2
+            rounded-full
+            text-xs
+            border border-white/10
+            bg-white/5
+            backdrop-blur-md
+            text-slate-300
+          "
+          >
+            Technologies
+          </span>
 
-          <div className="relative z-10">
+          <h2
+            className="
+            mt-6
+            text-4xl md:text-5xl
+            font-extrabold
+            tracking-tight
+            text-white
+          "
+          >
+            Tech Stack
+          </h2>
 
-            {/* Icon */}
-            <div className="mb-4 text-blue-400 text-2xl">⚛️</div>
+          <p
+            className="
+            mt-5
+            max-w-2xl
+            text-slate-300
+            leading-7
+            text-base md:text-lg
+          "
+          >
+            Technologies and tools I use to build scalable,
+            modern, and high-performance web applications.
+          </p>
 
-            <h3 className="text-xl font-semibold mb-3">
-              Frontend Engineering
-            </h3>
-
-            <p className="text-gray-400 text-sm mb-5 leading-6">
-              Building scalable UI systems with clean state management and performance focus.
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {["React", "Next.js", "Redux", "Tailwind"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-3 py-1 rounded-full 
-                             bg-white/5 border border-white/10 
-                             hover:bg-white/10 transition"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-          </div>
         </div>
 
-        {/* Backend */}
-        <div className="group relative p-6 rounded-2xl bg-[#0f172a] border border-white/10 
-                        hover:border-green-500/40 transition duration-300 hover:-translate-y-2">
+        {/* Grid */}
+        <div
+          className="
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          xl:grid-cols-3
+          gap-6 md:gap-8
+        "
+        >
 
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 
-                          bg-gradient-to-br from-green-500/10 to-transparent rounded-2xl transition" />
+          {stacks.map((stack, index) => (
+            <div
+              key={index}
+              className={`
+                group
+                relative
+                overflow-hidden
+                rounded-3xl
+                border border-white/10
+                bg-white/5
+                backdrop-blur-xl
+                p-6
+                transition duration-300
+                hover:-translate-y-2
+                ${stack.border}
+              `}
+            >
 
-          <div className="relative z-10">
+              {/* Glow */}
+              <div
+                className={`
+                absolute inset-0
+                opacity-0
+                group-hover:opacity-100
+                bg-gradient-to-br
+                ${stack.color}
+                blur-3xl
+                transition
+              `}
+              />
 
-            <div className="mb-4 text-green-400 text-2xl">🛠️</div>
+              <div className="relative z-10">
 
-            <h3 className="text-xl font-semibold mb-3">
-              Backend Systems
-            </h3>
-
-            <p className="text-gray-400 text-sm mb-5 leading-6">
-              Designing APIs and scalable architectures optimized for real-world usage.
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {["Django", "Node.js", "REST API"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-3 py-1 rounded-full 
-                             bg-white/5 border border-white/10 
-                             hover:bg-white/10 transition"
+                {/* Icon */}
+                <div
+                  className={`
+                  inline-flex
+                  items-center justify-center
+                  w-12 h-12
+                  rounded-2xl
+                  text-lg font-bold
+                  bg-gradient-to-r
+                  ${stack.color}
+                  text-white
+                  shadow-lg
+                `}
                 >
-                  {t}
-                </span>
-              ))}
-            </div>
+                  {stack.icon}
+                </div>
 
-          </div>
-        </div>
-
-        {/* CMS */}
-        <div className="group relative p-6 rounded-2xl bg-[#0f172a] border border-white/10 
-                        hover:border-purple-500/40 transition duration-300 hover:-translate-y-2">
-
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 
-                          bg-gradient-to-br from-purple-500/10 to-transparent rounded-2xl transition" />
-
-          <div className="relative z-10">
-
-            <div className="mb-4 text-purple-400 text-2xl">🌐</div>
-
-            <h3 className="text-xl font-semibold mb-3">
-              CMS & Web Solutions
-            </h3>
-
-            <p className="text-gray-400 text-sm mb-5 leading-6">
-              Delivering fast and SEO-optimized business websites using WordPress.
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {["WordPress", "SEO"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-3 py-1 rounded-full 
-                             bg-white/5 border border-white/10 
-                             hover:bg-white/10 transition"
+                {/* Title */}
+                <h3
+                  className="
+                  mt-6
+                  text-2xl
+                  font-bold
+                  text-white
+                "
                 >
-                  {t}
-                </span>
-              ))}
-            </div>
+                  {stack.title}
+                </h3>
 
-          </div>
+                {/* Description */}
+                <p
+                  className="
+                  mt-4
+                  text-slate-300
+                  text-sm
+                  leading-7
+                "
+                >
+                  {stack.description}
+                </p>
+
+                {/* Tech */}
+                <div className="mt-6 flex flex-wrap gap-2">
+
+                  {stack.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="
+                      px-3 py-1
+                      rounded-full
+                      text-xs
+                      border border-white/10
+                      bg-black/20
+                      text-slate-300
+                    "
+                    >
+                      {tech}
+                    </span>
+                  ))}
+
+                </div>
+
+              </div>
+
+            </div>
+          ))}
+
         </div>
 
       </div>
