@@ -12,47 +12,96 @@ export default function Hero() {
     >
 
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br 
-                      from-cyan-500/10 via-transparent to-blue-500/10" />
+      <div
+        className="
+        absolute inset-0
+        bg-gradient-to-br
+        from-cyan-500/10
+        via-transparent
+        to-blue-500/10
+      "
+      />
 
       {/* Glow Effects */}
-      <div className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px]
-                      bg-cyan-500/20 blur-2xl rounded-full 
-                      top-[-120px] left-[-120px]" />
+      <div
+        className="
+        absolute
+        w-[350px] h-[350px]
+        md:w-[500px] md:h-[500px]
 
-      <div className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px]
-                      bg-blue-500/20 blur-2xl rounded-full 
-                      bottom-[-120px] right-[-120px]" />
+        bg-cyan-500/20
+        blur-2xl
+        rounded-full
+
+        top-[-120px]
+        left-[-120px]
+      "
+      />
+
+      <div
+        className="
+        absolute
+        w-[300px] h-[300px]
+        md:w-[400px] md:h-[400px]
+
+        bg-blue-500/20
+        blur-2xl
+        rounded-full
+
+        bottom-[-120px]
+        right-[-120px]
+      "
+      />
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 opacity-[0.03]
-                      bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)]
-                      bg-[size:40px_40px]" />
+      <div
+        className="
+        absolute inset-0
+        opacity-[0.03]
+
+        bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)]
+
+        bg-[size:40px_40px]
+      "
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto text-center">
 
-        {/* Badge */}
+        {/* Badge - Desktop Only */}
         <span
           className="
-          inline-flex items-center gap-2
+          hidden md:inline-flex
+          items-center gap-2
+
           text-xs md:text-sm
-          px-4 py-2 mb-8
+
+          px-4 py-2
+          mb-8
+
           rounded-full
+
           border border-white/10
-          bg-white/5 backdrop-blur-md
+          bg-white/5
+          backdrop-blur-md
+
           text-slate-300
         "
         >
+
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+
           Full-Stack Developer
+
         </span>
 
         {/* Title */}
         <h1
           className="
           text-4xl sm:text-5xl md:text-7xl
+
           font-extrabold
+
           tracking-tight
           leading-tight
         "
@@ -64,11 +113,16 @@ export default function Hero() {
         <h2
           className="
           mt-5
+
           text-lg sm:text-xl md:text-2xl
+
           font-medium
+
           bg-gradient-to-r
           from-cyan-400 to-blue-500
-          text-transparent bg-clip-text
+
+          text-transparent
+          bg-clip-text
         "
         >
           Building scalable systems & modern web experiences
@@ -78,9 +132,13 @@ export default function Hero() {
         <p
           className="
           mt-6
+
           text-slate-300
+
           text-base md:text-lg
+
           leading-7 md:leading-8
+
           max-w-2xl
           mx-auto
         "
@@ -94,8 +152,11 @@ export default function Hero() {
         <div
           className="
           mt-10
+
           flex flex-col sm:flex-row
+
           justify-center
+
           gap-4
         "
         >
@@ -105,13 +166,20 @@ export default function Hero() {
             href="#projects"
             className="
             px-8 py-3
+
             rounded-full
+
             bg-gradient-to-r
             from-cyan-500 to-blue-500
+
             text-white
             font-medium
-            shadow-lg shadow-cyan-500/20
+
+            shadow-lg
+            shadow-cyan-500/20
+
             hover:scale-105
+
             transition duration-300
           "
           >
@@ -123,11 +191,16 @@ export default function Hero() {
             href="#contact"
             className="
             px-8 py-3
+
             rounded-full
+
             border border-white/10
+
             bg-white/5
             backdrop-blur-md
+
             hover:bg-white/10
+
             transition duration-300
           "
           >
@@ -142,20 +215,29 @@ export default function Hero() {
           <div
             className="
             w-6 h-10
+
             rounded-full
+
             border border-white/10
+
             flex justify-center
+
             p-2
           "
           >
+
             <div
               className="
               w-1 h-2
+
               rounded-full
+
               bg-cyan-400
+
               animate-bounce
             "
             />
+
           </div>
 
         </div>
